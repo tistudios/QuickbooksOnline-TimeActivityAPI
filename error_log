@@ -1,0 +1,7 @@
+[28-Oct-2018 02:36:34 America/New_York] PHP Notice:  Undefined index: sessionAccessToken in /home/ratholrm/triangles.thedistillerydistrict.org/apiCall.php on line 25
+[28-Oct-2018 02:36:34 America/New_York] PHP Fatal error:  Uncaught Error: Call to a member function getRealmID() on null in /home/ratholrm/triangles.thedistillerydistrict.org/vendor/quickbooks/v3-php-sdk/src/DataService/DataService.php:444
+Stack trace:
+#0 /home/ratholrm/triangles.thedistillerydistrict.org/apiCall.php(30): QuickBooksOnline\API\DataService\DataService->updateOAuth2Token(NULL)
+#1 /home/ratholrm/triangles.thedistillerydistrict.org/apiCall.php(37): makeAPICall()
+#2 {main}
+  thrown in /home/ratholrm/triangles.thedistillerydistrict.org/vendor/quickbooks/v3-php-sdk/src/DataService/DataService.php on line 444

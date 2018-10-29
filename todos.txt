@@ -1,0 +1,8 @@
+1. Move over information from TimeActivity Api Call script to just apiCall
+2. Change mentions of apiCall within Index.php
+3. Edit refreshtokens.php as well.
+4. Configure local ngrok server for security while doing this.
+5. Test on development and if everything works, roll out to production.
+
+If all else fails, zapier & a excel/pdf parser is your best friend.
+Ensure API GETs and POSTs are valid, and once finished above look for integration to Tableau.
