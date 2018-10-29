@@ -1,20 +1,4 @@
-[![Sample Banner](views/Sample.png)][ss1]
-
-Intuit OAuth2.0 and OpenID Connect Demo in PHP
-==========================================================
-
-## Overview
-
-This is a sample `Demo` app in PHP to showcase how to Authorize using `OAuth2.0` and `OpenID Connect` and to make API calls using the [QuickBooks-V3-PHP-SDK](https://github.com/intuit/QuickBooks-V3-PHP-SDK) SDK
-
-This sample app is meant to showcase an example of how to integrate your app with the Intuit Developer Platform. It showcases the following:
-
-* Authorize into the app via [OAuth2.0](https://developer.intuit.com/docs/00_quickbooks_online/2_build/10_authentication_and_authorization/10_oauth_2.0) OR
-* Authorize into the app via [OpenIDConnect](https://developer.intuit.com/docs/00_quickbooks_online/2_build/10_authentication_and_authorization/50_identity/20_openid_connect)
-* API call using the above ( access token / refresh token ) to `GetCompanyInfo` 
-
-
-## Installation
+READ todo.txt as well
 
 ### Via Github Repo (Recommended)
 
@@ -39,71 +23,71 @@ You must have an Intuit Developer account and have created an app. To know more 
 
 ## Configuration
 
-Edit the `config.php` file to add your:  
+  Edit the `config.php` file to add your:  
 
-* **clientId:** You can find your `clientId` from the `Keys` tab under your `App` listed on the developer portal
-* **clientSecret:** You can find your `clientSecret` from the `Keys` tab under your `App` 
-* **redirectUri:** The `redirectUri` for your app ( **OAuth2.0** )
+  * **clientId:** You can find your `clientId` from the `Keys` tab under your `App` listed on the developer portal
+  * **clientSecret:** You can find your `clientSecret` from the `Keys` tab under your `App` 
+  * **redirectUri:** The `redirectUri` for your app ( **OAuth2.0** )
 
-In the [Developer Portal](http://developer.intuit.com/), ensure the redirect URI in your `config.json` file has been entered in your app configuration. By default, the URL is set to the following for this demo:
+  In the [Developer Portal](http://developer.intuit.com/), ensure the redirect URI in your `config.json` file has been entered in your app configuration. By default, the URL is set to the following for this demo:
 
-`http://localhost:3000/callback`
-
-
-### TLS / SSL (**optional**)
-
-If you want your enpoint to be exposed over the internet. The easiest way to do that while you are still developing your code locally is to use [ngrok](https://ngrok.com/).  
-
-Here are the steps to configure ngrok  
-1. Download and install ngrok  
-2. Expose your localhost by running "ngrok http 3000" on the command line.  
-3. You will then get a forwarding url that looks something like this: Forwarding https://755c8b38.ngrok.io -> localhost:3000
-
-This will expose localhost:3000 to the Internet. Your endpoint url will now be https://755c8b38.ngrok.io/webhooks Copy this url and use it for setting the redirectUri  [Intuit Developer Portal](https://developer.intuit.com) for your app.
+  `http://localhost:3000/callback`
 
 
-## Difference between OAuth2.0 and OpenID Connect
+  ### TLS / SSL (**optional**)
 
-Lets take a look at the key differences between OAuth2.0 and OpenID connect as per the authorization flow is :
-![Auth Flow](views/oauth2flow.png)
- 
+  If you want your enpoint to be exposed over the internet. The easiest way to do that while you are still developing your code locally is to use [ngrok](https://ngrok.com/).  
 
-* **OAuth2.0**  
- 
-    * Scope - Available scopes include: (Space delimited set of permissions that the application requests)
-                 
-          com.intuit.quickbooks.accounting — QuickBooks Online API
-                 
-          com.intuit.quickbooks.payment — QuickBooks Payments API   
-    ![APP screenshots](views/oauth2_scopes.png)
-             
-    * OAuth2.0 authorization flow  
-    ![APP screenshots](views/oauth2flow.png)  
-    
-    * OAuth2.0 Documentation - click [here](https://developer.intuit.com/docs/00_quickbooks_online/2_build/10_authentication_and_authorization/10_oauth_2.0)
-    
-    
-    
-* **OpenID Connect**
+  Here are the steps to configure ngrok  
+  1. Download and install ngrok  
+  2. Expose your localhost by running "ngrok http 3000" on the command line.  
+  3. You will then get a forwarding url that looks something like this: Forwarding https://755c8b38.ngrok.io -> localhost:3000
 
-    * Scope -  Available scopes include: (Space delimited set of permissions that the application requests)   
-                     
-          openid — QuickBooks Online API
-                 
-          profile — QuickBooks Payments API  
-             
-          email - user's email address  
-                     
-          phone - user's phone number  
-            
-          address - user's physical address                   
-    ![APP screenshots](views/openIDConnect_scopes.png)
-                       
-    * OAuth2.0 authorization flow  
-    ![APP screenshots](views/openIdConnectflow.png)  
- 
-    * OpenID Connect Documentation - click [here](https://developer.intuit.com/docs/00_quickbooks_online/2_build/10_authentication_and_authorization/50_identity/20_openid_connect) 
-    
+  This will expose localhost:3000 to the Internet. Your endpoint url will now be https://755c8b38.ngrok.io/webhooks Copy this url and use it for setting the redirectUri  [Intuit Developer Portal](https://developer.intuit.com) for your app.
+
+
+  ## Difference between OAuth2.0 and OpenID Connect
+
+  Lets take a look at the key differences between OAuth2.0 and OpenID connect as per the authorization flow is :
+  ![Auth Flow](views/oauth2flow.png)
+
+
+  * **OAuth2.0**  
+
+      * Scope - Available scopes include: (Space delimited set of permissions that the application requests)
+
+            com.intuit.quickbooks.accounting — QuickBooks Online API
+
+            com.intuit.quickbooks.payment — QuickBooks Payments API   
+      ![APP screenshots](views/oauth2_scopes.png)
+
+      * OAuth2.0 authorization flow  
+      ![APP screenshots](views/oauth2flow.png)  
+
+      * OAuth2.0 Documentation - click [here](https://developer.intuit.com/docs/00_quickbooks_online/2_build/10_authentication_and_authorization/10_oauth_2.0)
+
+
+
+  * **OpenID Connect**
+
+      * Scope -  Available scopes include: (Space delimited set of permissions that the application requests)   
+
+            openid — QuickBooks Online API
+
+            profile — QuickBooks Payments API  
+
+            email - user's email address  
+
+            phone - user's phone number  
+
+            address - user's physical address                   
+      ![APP screenshots](views/openIDConnect_scopes.png)
+
+      * OAuth2.0 authorization flow  
+      ![APP screenshots](views/openIdConnectflow.png)  
+
+      * OpenID Connect Documentation - click [here](https://developer.intuit.com/docs/00_quickbooks_online/2_build/10_authentication_and_authorization/50_identity/20_openid_connect) 
+
 
 ## Usage
 
